@@ -4,26 +4,23 @@
     ViewData["Title"] = "Emres CarBooking";
 }
 
-<<h1>List of available cars</h1>
+<h1>List of available cars</h1>
 
 <p>
-    <a asp-action="Create">Add a new car</a>
+    <a href="@Url.Action("Create")">
+        <img class="plusIcon" src="/images/CarPlusIcon.png" />
+    </a>
 </p>
 
-<table class="table">
-    <thead>
+<table class="table" style="background-color:white;">
+    <thead class="thead-dark">
         <tr>
+            <th>Model</th>
+            <th>Year</th>
+            <th>Mileage</th>
+            <th>Price</th>
             <th>
-                Model
-            </th>
-            <th>
-                Year
-            </th>
-            <th>
-                Mileage
-            </th>
-            <th>
-                Price
+
             </th>
         </tr>
     </thead>
@@ -36,7 +33,7 @@
             <td>@car.Mileage</td>
             <td>@car.Price</td>
             <td>
-                <a asp-action="Delete" asp-route-id="@car.Id">Delete</a>
+                <a class="" asp-action="Delete" asp-route-id="@car.Id">Delete</a>
                 <a asp-action="Edit" asp-route-id="@car.Id">Edit</a>
             </td>
         </tr>
