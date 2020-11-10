@@ -58,7 +58,7 @@ namespace CarBooking.Controllers
             return View(car);
         }
 
-        // POST: Rooms/Edit/5
+       
         [HttpPost]
         public IActionResult Edit(Car car)
         {
