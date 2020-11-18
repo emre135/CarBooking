@@ -8,7 +8,7 @@
 
 <p>
     <a href="@Url.Action("Create")">
-        <img class="plusIcon" src="/images/CarPlusIcon.png" />
+        <img class="plusIcon" src="/images/CarPlusIcon.png" alt="Add a new car" />
     </a>
 </p>
 
@@ -17,8 +17,8 @@
         <tr>
             <th>Model</th>
             <th>Year</th>
-            <th>Mileage</th>
-            <th>Price</th>
+            <th>Mileage (km)</th>
+            <th>Price per day (sek)</th>
             <th>
 
             </th>
@@ -32,10 +32,12 @@
             <td>@car.Year</td>
             <td>@car.Mileage</td>
             <td>@car.Price</td>
+
             <td>
-                <a class="" asp-action="Delete" asp-route-id="@car.Id">Delete</a>
-                <a asp-action="Edit" asp-route-id="@car.Id">Edit</a>
+                <a asp-action="Delete" asp-route-id="@car.Id"><img class="trashIcon" src="~/images/TrashIcon.png" alt="Delete car"/></a>
+                <a asp-action="Edit" asp-route-id="@car.Id"><img class="editIcon"src="~/images/EditIcon.png" alt="Edit car"/></a>
             </td>
+
         </tr>
         }
     </tbody>

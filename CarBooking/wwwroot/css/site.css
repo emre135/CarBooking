@@ -1,13 +1,52 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
+.motto {
+    padding-top: 200px;
+    font-family: Brush Script MT, Brush Script Std, cursive;
+    justify-content: center;
+}
+
+.homeInformation{
+    display: flex;
+    margin:auto;
+    padding-top: 50px;
+    justify-content:space-between;
+    max-width: 60%;
+   
+}
+
+.homescreen {
+    display: flex;
+}
+
+
+
+
+.homeRightSection{
+    padding-left: 50px;
+  
+}
+
+
 .disable {
     pointer-events: none;
     
 }
+
+.trashIcon {
+    max-width: 25px;
+    cursor: pointer;
+}
+
+.editIcon {
+    max-width: 25px;
+    cursor: pointer;
+}
+
 .plusIcon {
     max-width: 40px;
-
+    cursor: pointer;
 }
 a.navbar-brand {
   white-space: normal;

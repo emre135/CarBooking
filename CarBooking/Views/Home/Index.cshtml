@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewData["Title"] = "Home";
+}
+
+@model IEnumerable<Car>
+
+<html>
+<body>
+    <h1>Car Rental</h1>
+
+    <main class="homescreen">
+
+        <section class="homeLeftSection">
+            <video class="homeScreenVideo" controls autoplay loop>
+                <source src="~/videos/IntroVideo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </section>
+
+
+        <section class="homeRightSection">
+
+            <h3 class="flex-fill">Economy Is Our First Name</h3>
+            <p class="flex-fill">
+                One of our top priorities is to adjust each package we offer to our customer’s exact needs.
+                We offer a variety of options that can enhance your experience, Always according to your necessities,
+                and help you get the best out of your holidays or your business trip.
+            </p>
+
+            <h3 class="flex-fill">Book Safe And Easy</h3>
+            <p class="flex-fill">
+                Our smart booking engine searches for the best price, car category, extras,
+                exclusive offers and discounts suiting your needs.
+                You can securely book online today
+                and pay upon your arrival at the desk!
+            </p>
+
+        </section>
+
+
+    </main>
+
+    <div class="homeInformation">
+
+        <div>
+            <a class="homeScreenToGarage" asp-controller="Cars" asp-action="Index"><h2>View our car collection</h2></a>
+        </div>
+
+        <div>
+            <a class="homeScreenToRental" asp-controller="" asp-action=""><h2>Rent a car</h2></a>
+        </div>
+
+    </div>
+
+    <p class="motto">Because we believe in making traveling easier</p>
+</body>
+</html>

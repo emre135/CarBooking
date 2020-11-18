@@ -9,13 +9,13 @@ namespace CarBooking.Models
     public static class DbContext
     {
         public static List<Car> Cars { get; set; }
-        public static List<Booking> Bookings { get; set; }
+        public static List<Rental> Rentals { get; set; }
 
 
         static DbContext()
         {
             Cars = new List<Car>();
-            Bookings = new List<Booking>();
+            Rentals = new List<Rental>();
 
             Seed();
         }
@@ -43,10 +43,20 @@ namespace CarBooking.Models
               Mileage = 11000, 
               Price = 2000 };
 
+            var car4 = new Car()
+            {
+                Id = Guid.NewGuid(),
+                Model = "Honda Civic 1.6 vTec",
+                Year = 2008,
+                Mileage = 14200,
+                Price = 1000
+            };
+
 
             Cars.Add(car1);
             Cars.Add(car2);
             Cars.Add(car3);
+            Cars.Add(car4);
         }
 
 

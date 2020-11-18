@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Car>
+
+@{
+    ViewData["Title"] = "Emres CarBooking";
+}
+
+<h1>List of available cars</h1>
+
+<p>
+    <a href="@Url.Action("Create")">
+        <img class="plusIcon" src="/images/CarPlusIcon.png" alt="Add a new car" />
+    </a>
+</p>
+
+<table class="table" style="background-color:white;">
+    <thead class="thead-dark">
+        <tr>
+            <th>Model</th>
+            <th>Year</th>
+            <th>Mileage (km)</th>
+            <th>Price per day (sek)</th>
+            <th>
+
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var car in Model)
+        {
+            <tr>
+                <td>@car.Model</td>
+                <td>@car.Year</td>
+                <td>@car.Mileage</td>
+                <td>@car.Price</td>
+
+                <td>
+                    <a asp-action="Delete" asp-route-id="@car.Id">Cancel Rental</a>
+                    
+                
+
+            </tr>
+        }
+    </tbody>
+</table>
