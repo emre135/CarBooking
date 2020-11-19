@@ -1,0 +1,36 @@
+﻿@model EditRentalViewModel
+
+<h1>Edit rental</h1>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit" method="post">
+            <input hidden asp-for="Rental.Id" />
+            <div class="form-group">
+                <label class="control-label">Full name</label>
+                <input class="form-control" asp-for="Rental.CustomerName" />
+            </div>
+            <div class="form-group">
+                <label class="control-label">Car</label>
+                <select class="form-control" asp-for="Rental.CarId"
+                        asp-items="@(new SelectList(Model.Cars, "Id","Model"))">
+                </select>
+            </div>
+            <div class="form-group">
+                <label class="control-label">From</label>
+                <input class="form-control" asp-for="Rental.From" />
+                
+            </div>
+            <div class="form-group">
+                <label class="control-label">To</label>
+                <input class="form-control" asp-for="Rental.To" />
+            </div>
+            <div class="form-group">
+                <input class="btn btn-primary" type="submit" value="Save" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List of rentals</a>
+</div>

@@ -1,0 +1,40 @@
+﻿@model NewRentalViewModel
+
+
+<h1>Rent car</h1>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" method="post">
+            <div class="form-group">
+                <label class="control-label">Full Name</label>
+                <input class="form-control" asp-for="Rental.CustomerName" />
+                <span asp-validation-for="Rental.CustomerName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Car</label>
+                <select class="form-control" asp-for="Rental.CarId"
+                        asp-items="@(new SelectList(Model.Cars, "Id","Model"))">
+                    <option>Select car</option>
+                </select>
+                <span asp-validation-for="Rental.CarId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">From</label>
+                <input class="form-control" asp-for="Rental.From" />
+                <span asp-validation-for="Rental.From" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">To</label>
+                <input class="form-control" asp-for="Rental.To" />
+                <span asp-validation-for="Rental.To" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input class="btn btn-primary" type="submit" value="Create" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to Garage</a>
+</div>

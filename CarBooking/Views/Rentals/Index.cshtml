@@ -1,44 +1,61 @@
-﻿@model IEnumerable<Car>
+﻿@model IEnumerable<Rental>
+
 
 @{
-    ViewData["Title"] = "Emres CarBooking";
+    ViewData["Title"] = "Rentals";
 }
 
-<h1>List of available cars</h1>
+<h1>List of rented cars</h1>
 
-<p>
-    <a href="@Url.Action("Create")">
-        <img class="plusIcon" src="/images/CarPlusIcon.png" alt="Add a new car" />
-    </a>
-</p>
+<a href="@Url.Action("Create")">
+    <img class="plusIcon" src="/images/NotePlusIcon.png" alt="New rental" />
+</a>
 
 <table class="table" style="background-color:white;">
     <thead class="thead-dark">
         <tr>
-            <th>Model</th>
-            <th>Year</th>
-            <th>Mileage (km)</th>
-            <th>Price per day (sek)</th>
+            <th>Customer Name</th>
+            <th>Car</th>
+            <th>From</th>
+            <th>To</th>
+            <th>
+
+        <select id="sort-select" class="SelectDropdown__Select-jfvpwy-1 cZejDE">
+            <option>Sort by:</option>
+            <option value="customerName">Customer</option>
+            <option value="date">Date</option>
+            <option value="Car">Car</option>
+        </select>
+            </th>
             <th>
 
             </th>
+
         </tr>
     </thead>
     <tbody>
-        @foreach (var car in Model)
+
+
+        @foreach (var rental in Model)
         {
-            <tr>
-                <td>@car.Model</td>
-                <td>@car.Year</td>
-                <td>@car.Mileage</td>
-                <td>@car.Price</td>
+        <tr>
+            <td>@rental.CustomerName</td>
+            <td>@rental.CarModel</td>
+            <td>@rental.From</td>
+            <td>@rental.To</td>
 
-                <td>
-                    <a asp-action="Delete" asp-route-id="@car.Id">Cancel Rental</a>
-                    
-                
 
-            </tr>
+            <td>
+                <a asp-action="Delete" asp-route-id="@rental.Id">Cancel</a>
+            </td>
+
+            <td>
+                <a asp-action="Edit" asp-route-id="@rental.Id">Edit</a>
+            </td>
+
+
+
+        </tr>
         }
     </tbody>
 </table>

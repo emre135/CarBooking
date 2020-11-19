@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Car>
 
 @{
-    ViewData["Title"] = "Emres CarBooking";
+    ViewData["Title"] = "Garage";
 }
 
 <h1>List of available cars</h1>
@@ -20,6 +20,14 @@
             <th>Mileage (km)</th>
             <th>Price per day (sek)</th>
             <th>
+                <select id="sort-select" class="SelectDropdown__Select-jfvpwy-1 cZejDE">
+                    <option>Sort by:</option>
+                    <option value="CarModel">Model</option>
+                    <option value="Price">Price</option>
+                    <option value="Year">Year</option>
+                </select>
+            </th>
+            <th>
 
             </th>
         </tr>
@@ -35,9 +43,11 @@
 
             <td>
                 <a asp-action="Delete" asp-route-id="@car.Id"><img class="trashIcon" src="~/images/TrashIcon.png" alt="Delete car"/></a>
-                <a asp-action="Edit" asp-route-id="@car.Id"><img class="editIcon"src="~/images/EditIcon.png" alt="Edit car"/></a>
             </td>
 
+            <td>
+                <a asp-action="Edit" asp-route-id="@car.Id"><img class="editIcon"src="~/images/EditIcon.png" alt="Edit car"/></a>
+            </td>
         </tr>
         }
     </tbody>

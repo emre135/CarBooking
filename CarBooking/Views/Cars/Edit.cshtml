@@ -8,12 +8,14 @@
 
             <div class="form-group">
                 <label class="control-label">Model</label>
-               <input class="disable" asp-for="Model" />
+                <input class="disable" asp-for="Model" />
+                <span asp-validation-for="Model" class="text-danger"></span>
             </div>
 
             <div class="form-group">
                 <label class="control-label">Year</label>
                 <input class="disable" asp-for="Year" />
+                <span asp-validation-for="Year" class="text-danger"></span>
             </div>
 
             <div class="form-group">
